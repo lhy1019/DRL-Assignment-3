@@ -28,8 +28,8 @@ jobs:
         pip install gym
         pip install -r requirements.txt
 
-    - name: 3. Ensure env.so is executable
-      run: chmod +x eval.cpython-38-x86_64-linux-gnu.so
+    - name: 3. Download model weights from Google Drive
+      run: gdown --fuzzy https://drive.google.com/file/d/1B_pWYGDKsIMxuIiIO4uKluSn5vmdaXKf/view?usp=drive_link -O weights.pt
 
     - name: 4. Run Evaluation
       run: python eval.py --token a91aae52cff9ef65932db06b150ffd47
